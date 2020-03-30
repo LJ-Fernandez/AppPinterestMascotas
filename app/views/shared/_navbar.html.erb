@@ -19,6 +19,9 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item <%= 'active' if current_page?(new_pin_path) %>">
+          <%= link_to "Nuevo Pin", {controller: "pins", action: "new"}, class: "nav-link" %>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(new_pin_path) %>">
           <%= link_to "Pines", {controller: "pins", action: "index"}, class: "nav-link" %>
         </li>
       </ul>
