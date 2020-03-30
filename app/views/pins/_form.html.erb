@@ -3,13 +3,12 @@
     <%= form_with(model: pin, local: true) do |form| %>
       <% if pin.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
-
-          <ul>
+          <h2><%= pluralize(pin.errors.count, "error") %> Valide los siguientes datos:</h2>
+          <div class="alert alert-warning"  role="alert">
             <% pin.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
+             <%= message %>
             <% end %>
-          </ul>
+          </div>
         </div>
       <% end %>
         <div class="form-group">
