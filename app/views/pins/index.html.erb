@@ -9,7 +9,7 @@
         <%= image_tag(pin.image, alt: pin.titulo, :class => "card-img-top") %>
         <div class="card-body">
           <h5 class="card-title"><%= pin.titulo %></h5>
-          <h6 class="card-tile">Publicado por: <%= pin.user.name %></h6>
+          <h6 class="card-title">Publicado por: <%= pin.user.name %></h6>
           <p class="card-text"><%= pin.descripcion %></p>
           <%= link_to 'Ver', pin, :class =>"btn btn-info" %>
 
