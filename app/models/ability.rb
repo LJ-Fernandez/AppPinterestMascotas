@@ -11,7 +11,7 @@ class Ability
       can :manage, Pin
     elsif user.author_role?
       can [:read, :create], Pin
-      can [:update, :destroy], Pin, user_id: user.id
+      can [:update, :destroy, :delete_image], Pin, user_id: user.id
     end 
 
     # Define abilities for the passed in user here. For example:

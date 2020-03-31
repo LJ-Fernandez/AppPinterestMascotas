@@ -63,6 +63,16 @@ class PinsController < ApplicationController
     end
   end
 
+  def delete_image
+    begin
+      @image = ActiveStorage::Attachment.find(params[:image_id])
+      @image.purge
+      redirect_to pin_path(@pin), notice: 'Imagen eliminada con éxito'
+    rescue ActiveRecord::RecordNotFound
+      redirect_to pin_path(@pin), alert: 'Error al eliminar la imagen'
+    end
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pin
@@ -71,6 +81,6 @@ class PinsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pin_params
-      params.require(:pin).permit(:titulo, :descripcion, :image)
+      params.require(:pin).permit(:titulo, :descripcion, images: [])
     end
 end
