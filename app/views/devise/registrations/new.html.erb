@@ -21,14 +21,14 @@
   <div class="field form-group">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> Minimo de caracteres)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+    <%= f.password_field :password, autocomplete: "nueva clave", class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+    <%= f.password_field :password_confirmation, autocomplete: "nueva clave", class: "form-control" %>
   </div>
 
   <div class="actions">

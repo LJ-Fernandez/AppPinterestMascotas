@@ -12,7 +12,7 @@
       <%= f.label :name %><br />
       <%= f.text_field :name, class: "form-control" %>
     </div>
-
+    
     <div class="field custom-file form-group">
       <%= f.label :image, class: "custom-file-label" %>
       <%= f.file_field :image, class: "custom-file-input"%>
@@ -22,32 +22,32 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="field form-group">
+    <%= f.label :password %> <i>(dejar en blanco si no quiere actualizar)</i><br />
+    <%= f.password_field :password, autocomplete: "Nueva Clave", class: "form-control" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "Nueva clave", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  <div class="field form-group">
+    <%= f.label :current_password %> <i>(Ingrese su clave actual para guardar los cambios)</i><br />
+    <%= f.password_field :current_password, autocomplete: "Clave actual", class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Actualizar", :class => "btn btn-success" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Cancelar mi cuenta</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= button_to "Cancela", registration_path(resource_name), data: { confirm: "Está seguro?" }, method: :delete, class: "btn btn-warning" %></p>
 
 <%= link_to "Volver", :back, :class => "btn btn-primary"  %>
