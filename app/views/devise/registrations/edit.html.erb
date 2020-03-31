@@ -13,6 +13,11 @@
       <%= f.text_field :name, class: "form-control" %>
     </div>
 
+    <div class="field custom-file form-group">
+      <%= f.label :image, class: "custom-file-label" %>
+      <%= f.file_field :image, class: "custom-file-input"%>
+    </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
