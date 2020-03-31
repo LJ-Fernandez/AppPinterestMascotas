@@ -15,6 +15,16 @@
             <%= form.label :titulo, :for=>"lblnombrepin" %>
             <%= form.text_field :titulo, :class => "form-control", :id=>"lblnombrepin" %>
         </div>
+
+        <% @pin.images.each do |image| %>
+          <%= image_tag image %>
+          <br>
+          <%= link_to 'Remove', delete_image_pin_path(@pin, image), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+
+
+       
+
         <div class="form-group">
             <%= form.label :descripcion, :for=>"lbldescripcionpin" %>
             <%= form.text_field :descripcion, :class => "form-control", :id=>"lbldescripcionpin" %>
