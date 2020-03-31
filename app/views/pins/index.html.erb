@@ -6,9 +6,7 @@
   <% @pins.each do |pin| %>
     <div class="col-12 col-md-6 col-lg-3">
       <div class="card">
-        <% @pin.images.each do |image| %>
-          <%= image_tag image %>
-        <% end %>
+        <%= image_tag @pin.images[0], class: "card-img-top") %>
         <div class="card-body">
           <h5 class="card-title"><%= pin.titulo %></h5>
           <h6 class="card-title">Publicado por: <%= pin.user.name %></h6>

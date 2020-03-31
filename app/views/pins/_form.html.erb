@@ -15,10 +15,15 @@
             <%= form.label :titulo, :for=>"lblnombrepin" %>
             <%= form.text_field :titulo, :class => "form-control", :id=>"lblnombrepin" %>
         </div>
-       <div class="field custom-file form-group">
-            <%= form.label :images, :for=>"lblimgages", class: "custom-file-label" %>
-            <%= form.file_field :images, :class => "form-control", :id=>"lblimgages", class: "custom-file-input" %>
-        </div>
+
+        <% @pin.images.each do |image| %>
+          <%= image_tag image %>
+          <br>
+          <%= link_to 'Remove', delete_image_pin_path(@pin, image), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+
+
+       
 
         <div class="form-group">
             <%= form.label :descripcion, :for=>"lbldescripcionpin" %>

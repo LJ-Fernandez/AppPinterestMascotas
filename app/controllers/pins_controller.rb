@@ -71,7 +71,7 @@ class PinsController < ApplicationController
     rescue ActiveRecord::RecordNotFound
       redirect_to pin_path(@pin), alert: 'Error al eliminar la imagen'
     end
-    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
