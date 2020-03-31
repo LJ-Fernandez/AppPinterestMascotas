@@ -13,9 +13,12 @@
           <p class="card-text"><%= pin.descripcion %></p>
           <%= link_to 'Ver', pin, :class =>"btn btn-info" %>
 
-          
-          <%= link_to 'Editar', edit_pin_path(pin), :class =>"btn btn-warning" %>
-          <%= link_to '', pin, :class =>"btn btn-danger far fa-trash-alt", method: :delete, data: { confirm: 'Está seguro?' } %>
+          <% if can? :update, pin %>
+            <%= link_to 'Editar', edit_pin_path(pin), :class =>"btn btn-warning" %>
+          <% end %>
+          <% if can? :destroy, pin %>
+            <%= link_to '', pin, :class =>"btn btn-danger far fa-trash-alt", method: :delete, data: { confirm: 'Está seguro?' } %>
+          <% end %>
         </div>
       </div>
     </div>
